@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <div>
+        <h1>Enter Email and Text:</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="/sendMail">
+            <fieldset>
+                <legend>Input</legend>
+                <div>
+                    <label for="">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="content">Input</label>
+                    <input type="text" name="content" id="content">
+                </div>
+                <div>
+                    <button type="submit">Check</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
